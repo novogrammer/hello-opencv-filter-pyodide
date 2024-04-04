@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:pyodide && npm run build:vite",
+    "build:pyodide": "node tools/download.mjs",
+    "build:vite": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "isomorphic-fetch": "^3.0.0",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-static-copy": "^1.0.2"
   },
   "dependencies": {
     "pyodide": "^0.25.1"

@@ -19,5 +19,23 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 //   filter:filterCanny
 // });
 
+import { loadPyodide } from "pyodide";
 
+async function hello_python() {
+  let pyodide = await loadPyodide({
+  });
+  // await pyodide.loadPackage("micropip");
+  // const micropip = pyodide.pyimport("micropip");
+  // await micropip.install('numpy');
+  await pyodide.loadPackage(["numpy"],{
+    checkIntegrity:false,
+  });
+
+  await pyodide.runPythonAsync(`import numpy as np`);
+  return pyodide.runPythonAsync(`x = np.array([1, 2, 3])`);
+}
+
+hello_python().then((result) => {
+  console.log("Python says that 1+1 =", result);
+});
 

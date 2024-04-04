@@ -1,6 +1,18 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
+
 export default defineConfig({
+  plugins:[
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'node_modules/pyodide/*.*',
+          dest: './pyodide'
+        },
+      ]
+    })
+  ],
   base:"/hello-opencv-filter-pyodide/",
   build: {
     rollupOptions: {
