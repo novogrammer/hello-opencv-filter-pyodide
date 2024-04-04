@@ -10,4 +10,10 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+        'node-fetch': 'isomorphic-fetch',
+    },
+  },
+  optimizeDeps: { exclude: ["pyodide"] },
 })
