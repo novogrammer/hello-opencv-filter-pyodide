@@ -33,7 +33,8 @@ async function hello_python() {
   });
 
   await pyodide.runPythonAsync(`import numpy as np`);
-  return pyodide.runPythonAsync(`x = np.array([1, 2, 3])`);
+  await pyodide.runPythonAsync(`x = np.array([1, 2, 3])`);
+  return pyodide.runPythonAsync("1+1");
 }
 
 hello_python().then((result) => {
