@@ -27,5 +27,4 @@ export default defineConfig({
         'node-fetch': 'isomorphic-fetch',
     },
   },
-  optimizeDeps: { exclude: ["pyodide"] },
 })
