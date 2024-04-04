@@ -25,9 +25,6 @@ async function hello_python() {
   let pyodide = await loadPyodide({
     indexURL:"../node_modules/pyodide/"
   });
-  // await pyodide.loadPackage("micropip");
-  // const micropip = pyodide.pyimport("micropip");
-  // await micropip.install('numpy');
   await pyodide.loadPackage(["numpy"],{
     checkIntegrity:false,
   });
