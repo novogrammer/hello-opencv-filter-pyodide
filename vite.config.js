@@ -8,7 +8,7 @@ export default defineConfig({
       targets: [
         {
           src: 'node_modules/pyodide/*.*',
-          dest: './pyodide'
+          dest: './node_modules/pyodide'
         },
       ]
     })

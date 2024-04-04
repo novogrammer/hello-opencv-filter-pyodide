@@ -23,6 +23,7 @@ import { loadPyodide } from "pyodide";
 
 async function hello_python() {
   let pyodide = await loadPyodide({
+    indexURL:"../node_modules/pyodide/"
   });
   // await pyodide.loadPackage("micropip");
   // const micropip = pyodide.pyimport("micropip");
