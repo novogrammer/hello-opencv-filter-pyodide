@@ -25,7 +25,7 @@ async function hello_python() {
   let pyodide = await loadPyodide({
     indexURL:"../node_modules/pyodide/"
   });
-  await pyodide.loadPackage(["numpy"],{
+  await pyodide.loadPackage(["numpy","opencv-python"],{
     checkIntegrity:false,
   });
 

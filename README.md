@@ -11,15 +11,23 @@ Node.js 20.x
 npm install
 ```
 
+## ビルド
+
+```bash
+npm run build
+```
+
 ## 開発
 
+pyodideのパッケージをダウンロードする必要がある。
+ダウンロードはビルドタスクに含まれている。
 ```bash
 npm run dev
 ```
 
-## ビルドとプレビュー
+## プレビュー
 
+ビルドが必要
 ```bash
-npm run build
 npm run preview
 ```
